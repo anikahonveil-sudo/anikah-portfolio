@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-plex-sans), "Segoe UI", sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  --color-ink: #0c0b09;
+  --color-ivory: #efe8dc;
+  --color-paper: #efe6d6;
+  --color-inkdeep: #1a1612;
+  --color-muted: #a3988c;
+  --color-dusk: #3f3b36;
+  --color-copy: #ddd6cb;
+  --color-stamp: #e25b4a;
+  --color-seal: #8e2e2a;
+  --color-rule: #2e2a26;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--color-ink);
+  color: var(--color-ivory);
+}
+
+::selection {
+  background: #e25b4a;
+  color: #0c0b09;
+}
+
+:focus-visible {
+  outline: 1px solid #e25b4a;
+  outline-offset: 3px;
+}
+
+.ledger {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 2.15rem,
+    rgba(239, 232, 220, 0.045) 2.15rem,
+    rgba(239, 232, 220, 0.045) calc(2.15rem + 1px)
+  );
+}
+
+.sheet {
+  animation: file-open 180ms ease;
+}
+
+.sheet ::selection {
+  background: #8e2e2a;
+  color: #efe6d6;
+}
+
+@keyframes file-open {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.case-file {
+  animation: file-open 180ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet,
+  .case-file {
+    animation: none;
+  }
+}
