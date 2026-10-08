@@ -75,3 +75,9 @@ body {
     animation: none;
   }
 }
+
+@media (max-width: 767px) {
+  .font-mono {
+    letter-spacing: 0.08em;
+  }
+}

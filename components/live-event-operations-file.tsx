@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getNeighbors } from "@/content/site"
+import { getNeighbors, site } from "@/content/site"
 
 const roles = [
   "Event hosting",
@@ -73,7 +73,7 @@ function SignalPanel() {
   return (
     <dl>
       {rows.map(([label, value]) => (
-        <div key={label} className="border-t border-rule py-3">
+        <div key={label} className="border-t border-rule py-2.5 lg:py-3">
           <dt className="font-mono text-[0.62rem] tracking-[0.22em] text-stamp uppercase">{label}</dt>
           <dd className="mt-1 font-mono text-[0.72rem] tracking-[0.08em] text-ivory uppercase">{value}</dd>
         </div>
@@ -117,28 +117,31 @@ export function LiveEventOperationsFile() {
             Return to index
           </Link>
 
-          <p className="mt-10 font-mono text-sm tracking-[0.16em] text-stamp">AP-02</p>
+          <p className="mt-10 font-mono text-[0.62rem] tracking-[0.22em] text-muted uppercase">{site.name}</p>
+          <p className="mt-3 font-mono text-sm tracking-[0.16em] text-stamp">AP-02</p>
           <p className="mt-2 font-mono text-[0.68rem] tracking-[0.22em] text-muted uppercase">
             Event operations
           </p>
-          <h1 className="mt-5 text-balance font-serif text-4xl leading-[1.12] tracking-tight sm:text-6xl">
+          <h1 className="mt-5 text-balance font-serif text-4xl leading-[1.12] tracking-tight lg:text-6xl">
             Live event operations
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-8 text-copy">
             Five days. One winner. A live event that had to keep moving.
           </p>
-          <p className="mt-8 font-mono text-[0.72rem] leading-6 tracking-[0.12em] text-ivory uppercase">
-            5 days
-            <span className="mt-1 block">Poker event</span>
-            <span className="mt-1 block">Event host / operator</span>
-            <span className="mt-1 block">Paid work</span>
-          </p>
-          <p className="mt-4 font-mono text-[0.68rem] tracking-[0.14em] text-muted uppercase">
-            Status: Completed
-          </p>
-          <p className="mt-6 font-mono text-[0.65rem] tracking-[0.2em] text-stamp uppercase">
-            Open file / case record
-          </p>
+          <div className="hidden lg:block">
+            <p className="mt-8 font-mono text-[0.72rem] leading-6 tracking-[0.12em] text-ivory uppercase">
+              5 days
+              <span className="mt-1 block">Poker event</span>
+              <span className="mt-1 block">Event host / operator</span>
+              <span className="mt-1 block">Paid work</span>
+            </p>
+            <p className="mt-4 font-mono text-[0.68rem] tracking-[0.14em] text-muted uppercase">
+              Status: Completed
+            </p>
+            <p className="mt-6 font-mono text-[0.65rem] tracking-[0.2em] text-stamp uppercase">
+              Open file / case record
+            </p>
+          </div>
 
           <div className="mt-10 lg:hidden">
             <SignalPanel />

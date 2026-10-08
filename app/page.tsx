@@ -9,7 +9,7 @@ export default function IndexPage() {
       <p className="font-mono text-[0.68rem] tracking-[0.32em] text-stamp uppercase">
         {site.name}
       </p>
-      <h1 className="mt-5 max-w-3xl text-balance font-serif text-[2.6rem] leading-[1.12] tracking-tight sm:text-6xl">
+      <h1 className="mt-5 max-w-3xl text-balance font-serif text-[2.6rem] leading-[1.12] tracking-tight lg:text-6xl">
         {site.statement}
       </h1>
       <p className="mt-6 max-w-xl text-lg leading-8 text-copy">

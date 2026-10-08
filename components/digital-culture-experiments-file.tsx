@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { getNeighbors } from "@/content/site"
+import { getNeighbors, site } from "@/content/site"
 
 const notes = [
   {
@@ -103,12 +103,12 @@ function SignalPanel() {
   return (
     <dl>
       {rows.slice(0, 3).map(([label, value]) => (
-        <div key={label} className="border-t border-rule py-3">
+        <div key={label} className="border-t border-rule py-2.5 lg:py-3">
           <dt className="font-mono text-[0.62rem] tracking-[0.22em] text-stamp uppercase">{label}</dt>
           <dd className="mt-1 font-mono text-[0.72rem] tracking-[0.08em] text-ivory uppercase">{value}</dd>
         </div>
       ))}
-      <div className="border-t border-rule py-3">
+      <div className="border-t border-rule py-2.5 lg:py-3">
         <dt className="font-mono text-[0.62rem] tracking-[0.22em] text-stamp uppercase">Subjects</dt>
         <dd className="mt-1 font-mono text-[0.72rem] leading-6 tracking-[0.08em] text-ivory uppercase">
           {subjects.map((subject) => (
@@ -119,7 +119,7 @@ function SignalPanel() {
         </dd>
       </div>
       {rows.slice(3).map(([label, value]) => (
-        <div key={label} className="border-t border-rule py-3">
+        <div key={label} className="border-t border-rule py-2.5 lg:py-3">
           <dt className="font-mono text-[0.62rem] tracking-[0.22em] text-stamp uppercase">{label}</dt>
           <dd className="mt-1 font-mono text-[0.72rem] tracking-[0.08em] text-ivory uppercase">{value}</dd>
         </div>
@@ -145,21 +145,24 @@ export function DigitalCultureExperimentsFile() {
             Return to index
           </Link>
 
-          <p className="mt-10 font-mono text-sm tracking-[0.16em] text-stamp">AP-07</p>
+          <p className="mt-10 font-mono text-[0.62rem] tracking-[0.22em] text-muted uppercase">{site.name}</p>
+          <p className="mt-3 font-mono text-sm tracking-[0.16em] text-stamp">AP-07</p>
           <p className="mt-2 font-mono text-[0.68rem] tracking-[0.22em] text-muted uppercase">Digital culture</p>
-          <h1 className="mt-5 text-balance font-serif text-4xl leading-[1.12] tracking-tight sm:text-6xl">
+          <h1 className="mt-5 text-balance font-serif text-4xl leading-[1.12] tracking-tight lg:text-6xl">
             Digital culture experiments
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-8 text-copy">
             Observations on communities, attention, behaviour and the systems shaping the internet.
           </p>
-          <p className="mt-8 font-mono text-[0.72rem] leading-6 tracking-[0.12em] text-ivory uppercase">
-            Self-directed
-            <span className="mt-1 block">Field notes</span>
-            <span className="mt-1 block">Digital culture</span>
-          </p>
-          <p className="mt-4 font-mono text-[0.68rem] tracking-[0.14em] text-muted uppercase">Status: Active</p>
-          <p className="mt-6 font-mono text-[0.65rem] tracking-[0.2em] text-stamp uppercase">Field notes / 07</p>
+          <div className="hidden lg:block">
+            <p className="mt-8 font-mono text-[0.72rem] leading-6 tracking-[0.12em] text-ivory uppercase">
+              Self-directed
+              <span className="mt-1 block">Field notes</span>
+              <span className="mt-1 block">Digital culture</span>
+            </p>
+            <p className="mt-4 font-mono text-[0.68rem] tracking-[0.14em] text-muted uppercase">Status: Active</p>
+            <p className="mt-6 font-mono text-[0.65rem] tracking-[0.2em] text-stamp uppercase">Field notes / 07</p>
+          </div>
 
           <div className="mt-10 lg:hidden">
             <SignalPanel />
@@ -198,7 +201,7 @@ export function DigitalCultureExperimentsFile() {
                         <span className="hidden group-open:inline">Close note</span>
                       </span>
                     </span>
-                    <h3 className="mt-3 max-w-xl font-serif text-2xl leading-snug sm:text-3xl">{note.title}</h3>
+                    <h3 className="mt-3 max-w-xl text-balance font-serif text-2xl leading-snug sm:text-3xl">{note.title}</h3>
                     <span className="mt-2 block font-mono text-[0.62rem] tracking-[0.16em] text-muted uppercase">
                       {note.category}
                     </span>

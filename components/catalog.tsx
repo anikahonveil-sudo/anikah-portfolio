@@ -54,7 +54,7 @@ export function Catalog({ entries }: { entries: CatalogEntry[] }) {
         </p>
       </div>
 
-      <div className="mt-5 flex flex-wrap gap-2" role="group" aria-label="Filter by collection">
+      <div className="mt-6 flex flex-wrap gap-x-2 gap-y-3 md:mt-5 md:gap-2" role="group" aria-label="Filter by collection">
         {filters.map((filter) => {
           const pressed = collection === filter
 
@@ -66,8 +66,8 @@ export function Catalog({ entries }: { entries: CatalogEntry[] }) {
               onClick={() => setCollection(filter)}
               className={
                 pressed
-                  ? "bg-stamp px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.16em] text-ink uppercase"
-                  : "border border-rule px-3 py-1.5 font-mono text-[0.65rem] tracking-[0.16em] text-ivory uppercase hover:border-stamp hover:text-stamp"
+                  ? "inline-flex min-h-11 items-center bg-stamp px-3 py-2 font-mono text-[0.65rem] tracking-[0.16em] text-ink uppercase md:min-h-0 md:py-1.5"
+                  : "inline-flex min-h-11 items-center border border-rule px-3 py-2 font-mono text-[0.65rem] tracking-[0.16em] text-ivory uppercase hover:border-stamp hover:text-stamp md:min-h-0 md:py-1.5"
               }
             >
               {filter}
@@ -98,7 +98,7 @@ export function Catalog({ entries }: { entries: CatalogEntry[] }) {
                 <span className="mt-5 block font-mono text-[0.68rem] tracking-[0.2em] text-muted uppercase">
                   {entry.collection}
                 </span>
-                <span className="mt-3 block max-w-3xl font-serif text-3xl leading-snug group-hover:text-paper sm:text-4xl">
+                <span className="mt-3 block max-w-3xl text-balance font-serif text-3xl leading-snug group-hover:text-paper sm:text-4xl">
                   {entry.title}
                 </span>
                 <span className="mt-5 block space-y-1 font-mono text-[0.72rem] tracking-[0.12em] text-ivory uppercase">
