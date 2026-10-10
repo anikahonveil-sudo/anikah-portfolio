@@ -65,7 +65,7 @@ export const site = {
   field: "Community / Social / Web3 / Digital culture",
   statement: "I build digital spaces people actually want to be in.",
   secondary:
-    "I combine community psychology, visual taste and hands-on execution to build and manage digital experiences.",
+    "I combine community behaviour, visual taste and hands-on execution to build and manage digital experiences.",
   status: "Open to community / social / web3 work",
 }
 
