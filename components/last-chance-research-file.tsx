@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { GroundStrip } from "@/components/pixel-bits"
 import { getNeighbors, site } from "@/content/site"
 
 const examined = [
@@ -41,6 +42,9 @@ export function LastChanceResearchFile() {
 
   return (
     <article className="case-file">
+      <div className="overflow-hidden px-5 pt-4 sm:px-8 lg:px-10">
+        <GroundStrip />
+      </div>
       <div className="px-5 py-12 sm:px-8 sm:py-16 lg:grid lg:grid-cols-[minmax(0,1fr)_14.5rem] lg:items-start lg:gap-14 lg:px-10">
         <div className="mx-auto w-full max-w-2xl lg:mx-0">
           <Link

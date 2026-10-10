@@ -1,21 +1,22 @@
 import type { Metadata } from "next"
-import { IBM_Plex_Mono, IBM_Plex_Sans, Instrument_Serif } from "next/font/google"
+import { IBM_Plex_Mono, Nunito, Pixelify_Sans } from "next/font/google"
 import { Frame } from "@/components/frame"
 import { site } from "@/content/site"
 import "./globals.css"
 
-const instrument = Instrument_Serif({
-  weight: "400",
+const pixel = Pixelify_Sans({
+  weight: ["400", "700"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-instrument",
+  variable: "--font-pixel",
 })
 
-const plexSans = IBM_Plex_Sans({
-  weight: ["400", "500"],
+const nunito = Nunito({
+  weight: ["400", "600", "700"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-plex-sans",
+  variable: "--font-nunito",
 })
 
 const plexMono = IBM_Plex_Mono({
@@ -33,17 +34,19 @@ export const metadata: Metadata = {
   description: site.statement,
 }
 
+const themeBoot = `(function(){try{var k="anikah-theme";var s=localStorage.getItem(k);var t=s==="day"||s==="night"?s:window.matchMedia("(prefers-color-scheme: light)").matches?"day":"night";document.documentElement.setAttribute("data-theme",t)}catch(e){document.documentElement.setAttribute("data-theme","night")}})();`
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${instrument.variable} ${plexSans.variable} ${plexMono.variable} h-full`}
-    >
-      <body className="min-h-full bg-ink font-sans text-ivory antialiased">
+    <html lang="en" data-theme="night" className={`${pixel.variable} ${nunito.variable} ${plexMono.variable} h-full`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeBoot }} />
+      </head>
+      <body className="min-h-full bg-plum font-sans text-cream antialiased">
         <Frame>{children}</Frame>
       </body>
     </html>

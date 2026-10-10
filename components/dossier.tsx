@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { GroundStrip } from "@/components/pixel-bits"
 import type { ArchiveFile } from "@/content/site"
 import { getNeighbors } from "@/content/site"
 
@@ -15,7 +16,10 @@ export function Dossier({ file }: { file: ArchiveFile }) {
 
   return (
     <article className="sheet bg-paper text-inkdeep">
-      <div className="h-[3px] bg-seal" />
+      <div className="h-[3px] bg-stamp" />
+      <div className="mx-auto max-w-2xl overflow-hidden px-5 pt-4 sm:px-10">
+        <GroundStrip />
+      </div>
       <div className="px-5 py-12 sm:px-10 sm:py-16">
         <div className="mx-auto max-w-2xl">
           <Link href="/" className="font-mono text-[0.65rem] tracking-[0.22em] text-seal uppercase hover:text-inkdeep">
@@ -57,7 +61,7 @@ export function Dossier({ file }: { file: ArchiveFile }) {
           </div>
           <nav aria-label="Adjacent files" className="mt-16 grid gap-6 border-t border-inkdeep/15 pt-6 sm:grid-cols-2">
             {previous ? (
-              <Link href={`/dossier/${previous.slug}`} className="hover:text-seal">
+              <Link href={`/dossier/${previous.slug}`} className="hover:underline">
                 <span className="block font-mono text-[0.62rem] tracking-[0.18em] text-dusk uppercase">
                   Previous in index
                 </span>
@@ -67,7 +71,7 @@ export function Dossier({ file }: { file: ArchiveFile }) {
               <span />
             )}
             {next ? (
-              <Link href={`/dossier/${next.slug}`} className="hover:text-seal sm:text-right">
+              <Link href={`/dossier/${next.slug}`} className="hover:underline sm:text-right">
                 <span className="block font-mono text-[0.62rem] tracking-[0.18em] text-dusk uppercase">
                   Next in index
                 </span>

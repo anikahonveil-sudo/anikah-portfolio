@@ -60,8 +60,8 @@ export const collections: Collection[] = [
 
 export const site = {
   name: "Anikah Parveen",
-  archive: "The Internet Culture Archive",
-  mark: "ICA",
+  archive: "Anikah Archive",
+  mark: "AA",
   field: "Community / Social / Web3 / Digital culture",
   statement: "I build digital spaces people actually want to be in.",
   secondary:
@@ -79,8 +79,8 @@ export const investigating = [
 export const contact: ContactLink[] = []
 
 export const nav = [
-  { href: "/", label: "Index" },
-  { href: "/operator", label: "Operator" },
+  { href: "/", label: "Title" },
+  { href: "/operator", label: "Player profile" },
 ]
 
 export const operator = [
